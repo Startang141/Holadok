@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Holadok</title>
+    <style type="text/tailwindcss">     
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');   
+        *{
+            font-family: "Source Sans Pro";
+        }
+
+        .container{
+          width: 1440px;  
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-36 relative">
+    <nav class="flex mt-12 justify-between items-center">
+        <div class="flex">
+        <div class="flex mr-24">
+            <img src="assets/img/logo.svg" alt="" srcset="">
+            <h2 class="ml-4 font-bold text-lg text-[#101C45]">Holadok</h2>
+        </div>
+        <div>
+            <ul class="flex space-x-[50px] text-base text-gray-600">
+                <li>Home</li>
+                <li>Features</li>
+                <li>Blog</li>
+                <li>About Us</li>
+            </ul>
+        </div>
+        </div>
+        <div class="z-50">
+        <button class="text-base text-[#101C45] font-bold mr-15 px-5 py-2">Login</button>
+        <button class="text-base text-[#101C45] font-bold px-5 py-2 border border-[#101C45]">Book Now</button>
+        </div>
+    </nav>
+    </div>
+</body>
+</html>
