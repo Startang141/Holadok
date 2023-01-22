@@ -1,23 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                colors: {
+    
+                }
+            }
+        }
+    }</script>
     <style type="text/tailwindcss">
          @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');   
         *{
             font-family: "Source Sans Pro";
         }
+        #toggle:checked ~ label div.toggle-circle {
+            @apply translate-x-6
+        } 
     </style>
     <title>Login - Holadok</title>
 </head>
 <body class="dark:bg-slate-800 dark:text-white">
     <div class="container w-[1440px] mx-auto">
-        <div class="max-w-xl border border-slate-200 shadow-md p-5 rounded-xl m-auto">
-            <h2 class="font-bold text-2xl text-[#101C45]">Login Page</h2>
+        <div class="max-w-xl border border-slate-200 shadow-md p-5 rounded-xl m-auto bg-[#ffffff17] ">
+            <div class="flex justify-between items-center">
+            <div class="">
+            <h2 class="font-bold text-2xl text-[#101C45] dark:text-white">Login Page</h2>
             <p class="mb-5 text-slate-400">if you already a member, easily log in</p>
+            </div>
+            <div class="">
+                <input type="checkbox" id="toggle" class="hidden">
+                <label for="toggle">
+                    <div class="w-12 h-6 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer">
+                        <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+                    </div>
+                </label>
+            </div>
+            </div>
             <!--Email-->
             <form action="">
             <label for="email">
@@ -42,5 +67,13 @@
             <button class="flex border p-2 w-full rounded-md font-semibold items-center justify-center hover:scale-105 duration-300"><img src="assets/img/google.svg" alt="" srcset="" class="w-8 h-8"> Login With Google</button>
         </div>
     </div>
+    <script>
+        const checkbox = document.querySelector('#toggle');
+        const html = document.querySelector('html');
+
+        checkbox.addEventListener('click', function(){
+            checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+        })
+    </script>
 </body>
 </html>
